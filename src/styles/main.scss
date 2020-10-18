@@ -1,1 +1,21 @@
+@import './scssConfig.scss';
 @import './normalize.scss';
+i[class^=icon]{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    background-color: $color-main;
+    border-radius: 50%;
+}
+.icon-help{
+    background: url(~@/assets/images/icon/icon-holp.png) no-repeat;
+}
+.icon-search{
+    background: url(~@/assets/images/icon/icon-search.png) no-repeat;
+}
+.icon-location{
+    background: url(~@/assets/images/icon/icon-location.png) no-repeat;
+}
+.icon-user{
+    background: url(~@/assets/images/icon/icon-user.png) no-repeat;
+}

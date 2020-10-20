@@ -12,20 +12,29 @@ export default {
         return{
             zoom:16,
             map:null,
-//          center:[113.59946,34.743095],//中心点,:amap-manager="amapManager"  :center="center" :zoom="zoom"
+          center:[],//中心点,:amap-manager="amapManager"  :center="center" :zoom="zoom"
 //          amapManager,
             events: {}
           }
        },
+       created(){
+        
+       },
        mounted(){
 	    	lazyAMapApiLoaderInstance.load().then(() => {
+                
 			  // your code ...
 			  this.map = new AMap.Map('amapDemo', {
 			    zoom:this.zoom, //初始化地图层级
 	        	center: [113.597279,34.744646] //初始化地图中心点
-			  })
+              })
+             
 			})
-	    }
+        },
+        methods:{
+            
+         
+        }
   }
 </script>
 <style lang="scss">

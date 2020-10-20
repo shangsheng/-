@@ -19,3 +19,18 @@ i[class^=icon]{
 .icon-user{
     background: url(~@/assets/images/icon/icon-user.png) no-repeat;
 }
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+header{
+ @extend %clearfix;       
+}
+section{
+    @include webkitA(display,flex)
+}
+footer{
+    @extend %clearfix;
+}

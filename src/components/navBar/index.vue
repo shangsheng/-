@@ -8,7 +8,7 @@
 					<a href="javascript:viod(0);" class="select-car-btn">选择车辆</a>
 				</li>
 				<li><i class="icon icon-location"></i></li>
-				<li><i class="icon icon-user"></i></li>
+				<li @click="userClick" :class="{'disabled':disabledBoolen}"><i class="icon icon-user"></i></li>
 				
 			</ul>
 		</div>
@@ -16,6 +16,21 @@
 </template>
 
 <script>
+export default{
+	data(){
+		return{
+			disabledBoolen:false,
+		}
+	},
+	methods:{
+	    userClick(){
+			this.$router.push({
+    			name:'User'
+			})
+			this.disabledBoolen = true;
+    	}
+	}
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,4 +62,5 @@
 			margin: 0 17px;
 		}
 	}
+	.disabled { pointer-events: none; }
 </style>

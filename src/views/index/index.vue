@@ -47,11 +47,8 @@ export default {
 	right: -600px;
 	z-index: 101;
 	background-color: #34393f;
-	transition: all .3s ease 0s;
-	-webkit-transition: all .3s ease 0s;
-	-moz-transition: all .3s ease 0s;
-	-ms-transition: all .3s ease 0s;
-	-o-transition: all .3s ease 0s;
+	@include webkit(transition, all .3s ease 0s);
+    @include webkit(box-shadow, -5px 0 38px 0 rgba(0, 0, 0, .4));
 	&.open{
 		right: 0;	
 	}

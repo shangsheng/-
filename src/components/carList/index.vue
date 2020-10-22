@@ -4,7 +4,7 @@
 			<div class="pull-left"><img src="../../assets/images/carImg/car-logo.png" class="car-logo"><span class="clar-name">Mustang 2019款</span></div>
 			<div class="pull-right"><span class="car-type">新能源汽车  5座</span></div>
 		</header>
-		<section class="car-section">
+		<section class="car-section" @click="listDetails">
 			<div class="car-plate">
 				<div class="plate-name">粤 B745N8</div>
 				<div class="plate-quantity">
@@ -27,7 +27,7 @@
 				<img src="../../assets/images/carImg/car-imgs.png">
 			</div>
 		</section>
-		<footer class="car-footer" @click="listDetails">
+		<footer class="car-footer" >
 			<div class="pull-left">
 				<span class="car-parkingLot">某某停车场</span>
 			</div>
@@ -99,6 +99,7 @@
 	}
 	
 	.car-section {
+		cursor: pointer;
 		height: 120px;
 		.car-plate {
 			align-self: center;

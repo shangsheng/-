@@ -1,5 +1,5 @@
 <template>
-	<div class="carDetails" :class="{'showCar':showDetails}" :hidden="!showDetails">
+	<div class="carDetails" :class="{'showCar':showDetails}" :hidden="!showDetails" :style="'height:'+ height">
 		<div class="particulars">
 			<div class="parkingLot">
 				<span>某某停车场</span>
@@ -12,7 +12,7 @@
 				</div>
 				<div class="car-information">
 					<div class="car-plate">
-						<div class="plate pull-left">粤B745N8</div>
+						<div class="plate pull-left fs-24">粤B745N8</div>
 						<div class="kilometre pull-right">
 							<sub>约</sub>
 							<strong>600</strong>
@@ -32,22 +32,11 @@
 					</div>
 					<div class="car-rental-rules">
 						<ul>
-							<li class="rules-active">
-								<span class="pull-left">日租车</span>
-								<span class="pull-right">￥300/1天</span>
+							<li :class="{'rules-active':index == carRentalIndex}" v-for="(item,index) in carRentalData" :key="item.id" :data-index="index" @click="carRentalType($event)">
+								<span class="pull-left">{{item.dates}}</span>
+								<span class="pull-right">{{item.moneyDate}}</span>
 							</li>
-							<li>
-								<span class="pull-left">3日租车</span>
-								<span class="pull-right">￥499.00/1天</span>
-							</li>
-							<li>
-								<span class="pull-left">5日租车</span>
-								<span class="pull-right">￥799.00/1天</span>
-							</li>
-							<li>
-								<span class="pull-left">小时租车</span>
-								<span class="pull-right">￥99.00/1天</span>
-							</li>
+							
 						</ul>
 						<div class="car-ordination">
 							<div class="ordination pull-left"><a href="#">参保《全面保障服务》用车更放心</a></div>
@@ -69,11 +58,13 @@
 			return{
 				choiceBoolean:false,
 				showDetails:false,
+				carRentalData:[{id:1,dates:'日租车',moneyDate:'￥300/1天'},{id:2,dates:'3日租车',moneyDate:'￥499.00/1天'},{id:3,dates:'5日租车',moneyDate:'￥799.00/1天'},{id:4,dates:'小时租车',moneyDate:'￥99.00/1天'}],
+				carRentalIndex:"0",
+				height:"757px"
 			}
 		},
 		props:['carShow'],
 		created(){
-			console.log(this.carShow)
 			this.showDetails = this.carShow;
 		},
 		computed:{
@@ -87,6 +78,10 @@
 				console.log(this.carShow)
 				this.$emit('details',false);
 				this.showDetails = false;
+			},
+			carRentalType(ev){
+				console.log(ev.target.dataset.index)
+				this.carRentalIndex = ev.target.dataset.index;
 			}
 		},
 		watch:{
@@ -96,16 +91,19 @@
 </script>
 
 <style lang="scss" scoped>
+.carDetails{
+	position: absolute;
+	bottom: 0;
+	left: 0px;
+	width: 444px;
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 16px;
+	z-index: 999;
+	@include webkit(box-shadow, 0 0 18px rgba(0,0,0,0.2));
+}
 	.particulars{
-		position: absolute;
-		bottom: 0;
-		left: 0px;
-		width: 444px;
-		padding: 30px;
-		background-color: #fff;
-		border-radius: 16px;
-		z-index: 999;
-		@include webkit(box-shadow, 0 0 18px rgba(0,0,0,0.2))
+		height: 100%;	
 		.parkingLot{
 			margin-bottom: 20px;
 			span{
@@ -151,7 +149,6 @@
 					margin-bottom: 20px;
 					@extend %clearfix;
 					.plate{
-						font-size: 24px;
 						color: #34393f;
 					}
 				}
@@ -175,7 +172,7 @@
 				.car-electric{
 					padding: 15px 10px;
 					border-radius: 16px;
-					@include webkit(box-shadow, 0 0 10px rgba(0,0,0,0.1))
+					@include webkit(box-shadow, 0 0 10px rgba(0,0,0,0.1));
 					.electric{
 						height: 8px;
 						border-radius: 4px;
@@ -204,13 +201,12 @@
 						margin-bottom: 10px;
 						li{
 							padding: 0 20px;
-							height: 48px;
+							height: 44px;
 							border: 2px solid transparent;
 							border-radius: 8px;
 							background-color: #f3f3f3;
 							margin-bottom: 15px;
 							cursor: pointer;
-							@extend %clearfix;
 							span{
 								font-size: 16px;
 								color: #34393f;
@@ -219,6 +215,7 @@
 							
 							&.rules-active{
 								border-color: $color-quantityColor;
+								transition: all 0.3s ease 0s;
 							}
 						}
 					}

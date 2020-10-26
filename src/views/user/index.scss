@@ -1,0 +1,49 @@
+.user-index{
+    padding: 0 30px;
+    .user-content{
+        display: flex;
+        padding: 84px 0 0 10px;
+        .user-logo{
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            padding: 5px;
+            background-color: #2f343a;
+        }
+        .user-accounts{
+            flex-grow: 1;
+            padding-left: 18px;
+            .name{
+                font-size: 18px;
+                color: #909090;
+                line-height: 42px;
+            }
+            span{
+                display: inline-block;
+                font-size: 14px;
+                color:#ffffff;
+                background-color: #10a3f7;
+                padding: 6px 18px;
+                border-radius: 30px;
+            }
+        }
+    }
+   
+    .sign-out{
+        width: 164px;
+        height: 60px;
+        background-color: #2d3339;
+        font-size: 18px;
+        color: #ffffff;
+        position: absolute;
+        bottom: 62px;
+        left: 50%;
+        margin-left: -82px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 30px;
+    }
+}
+
+

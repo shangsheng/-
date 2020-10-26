@@ -2,13 +2,13 @@
 	<div id="navBar">
 		<div class="nav-bar">
 			<ul>
-				<li><i class="icon icon-help"></i></li>
-				<li><i class="icon icon-search"></i></li>
+				<li><i class="icon icon-help icon-width-44"></i></li>
+				<li><i class="icon icon-search icon-width-44"></i></li>
 				<li>
 					<a href="javascript:viod(0);" class="select-car-btn">选择车辆</a>
 				</li>
-				<li><i class="icon icon-location"></i></li>
-				<li @click="userClick" :class="{'disabled':disabledBoolen}"><i class="icon icon-user"></i></li>
+				<li><i class="icon icon-location icon-width-44"></i></li>
+				<li @click="userClick"><i class="icon icon-user icon-width-44"></i></li>
 				
 			</ul>
 		</div>
@@ -19,7 +19,7 @@
 export default{
 	data(){
 		return{
-			disabledBoolen:false,
+			
 		}
 	},
 	methods:{
@@ -27,7 +27,7 @@ export default{
 			this.$router.push({
     			name:'User'
 			})
-			this.disabledBoolen = true;
+			
     	}
 	}
 }

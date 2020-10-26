@@ -1,13 +1,13 @@
 <template>
     <div>
     	 <!--dom渲染-->
-        <Car />
+        <!-- <Car /> -->
     	<!--地图-->
         <Map />
         <!--导航-->
         <Navbar />
         <!--会员 [showUser ? 'open user' : 'user']-->
-        <div :class="{'open':show}" class="user">
+        <div  :class="{'open':show}" class="user" id="children-view">
         	<router-view />
         </div>
     </div>
@@ -24,7 +24,14 @@ export default {
           }
        },
        mounted(){
-	    	
+	    	document.addEventListener("mouseup",(e)=>{
+				const userCon = document.getElementById("children-view");
+				if(userCon && !userCon.contains(e.target)){
+					this.$router.push({
+						name:'Index'
+					})
+				}
+			})
 	    },
 	    computed:{
 	    	show(){

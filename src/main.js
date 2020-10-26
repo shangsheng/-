@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import './plugin/vueMap';
 import './plugin/vueSwiper';
+import './components/subgroup/index';
 Vue.config.productionTip = false;
 
 new Vue({

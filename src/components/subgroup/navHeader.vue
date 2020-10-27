@@ -1,6 +1,6 @@
 <template>
     <div class="userHeader">
-        <div class="header"><i></i>{{headerName}}</div>
+        <div class="header"><i @click="back"></i>{{headerName}}</div>
     </div>
 </template>
 <script>
@@ -9,7 +9,12 @@ export default {
     data(){
         return{}
     },
-    props:['headerName']
+    props:['headerName'],
+    methods:{
+        back(){
+            window.history.go(-1);
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

@@ -48,4 +48,21 @@
         background-color: #00a3ff;
         border-color: #00a3ff;
     }
+    .el-select{
+        width: 100%;
+        .el-input__inner:focus {
+            border-color:transparent;
+        }
+        .el-input.is-focus {
+            width: 100%;
+            .el-input__inner {
+                border-color: transparent;
+            }
+        }
+        &:hover{
+            .el-input__inner {
+                border-color: transparent;
+            }
+        }
+    } 
 }

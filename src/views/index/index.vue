@@ -26,10 +26,20 @@ export default {
        mounted(){
 	    	document.addEventListener("mouseup",(e)=>{
 				const userCon = document.getElementById("children-view");
+				const elSelectDropdown = document.querySelector(".el-select-dropdown");
 				if(userCon && !userCon.contains(e.target)){
-					this.$router.push({
-						name:'Index'
-					})
+					if(elSelectDropdown){
+						if(!elSelectDropdown.contains(e.target)){
+							this.$router.push({
+								name:'Index'
+							})
+						}
+					}else{
+						this.$router.push({
+							name:'Index'
+						})
+					}
+					
 				}
 			})
 	    },

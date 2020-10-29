@@ -18,8 +18,22 @@ i[class^=icon]{
     width: 348px;
     height: 189px;
 }
+.icon-with-29{
+    width: 29px;
+    height: 29px;
+}
+.icon-with-22{
+    width: 22px;
+    height:22px;
+}
 .icon-help{
     background: url(~@/assets/images/icon/icon-holp.png) no-repeat;
+}
+.icon-help2{
+    background: url(~@/assets/images/icon/icon-help2.png) no-repeat;
+}
+.icon-help3{
+    background: url(~@/assets/images/icon/icon-help3.png) no-repeat;
 }
 .icon-search{
     background: url(~@/assets/images/icon/icon-search.png) no-repeat;
@@ -69,6 +83,9 @@ footer{
 .fs-24{
     font-size: 24px;
 }
+.clearfix{
+    @extend %clearfix;
+}
 /*user */
 .user-meta{
     margin-top: 80px;
@@ -103,4 +120,10 @@ footer{
             opacity: 0.3;
         }
     }
+}
+.account-bgc1{
+    background-image: url(~@/assets/images/account.png);
+}
+.icon-account-grade{
+    background-image: url(~@/assets/images/icon/icon-accrount.png);
 }

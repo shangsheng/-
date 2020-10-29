@@ -9,7 +9,7 @@
     </div>
     <div class="user-meta">
       <ul class="meta-ul">
-        <router-link to="aa" tag="a" class="arrow"><i class="icon icon-with-26 icon-user-money"></i>我的帐户</router-link>
+        <router-link to="/account" tag="a" class="arrow"><i class="icon icon-with-26 icon-user-money"></i>我的帐户</router-link>
         <router-link to="aa" tag="a" class="arrow"><i class="icon icon-with-26 icon-user-wheel"></i>租车订单</router-link>
         <router-link to="/certification" tag="a" class="arrow"><i class="icon icon-with-26 icon-user-adviser"></i>实名认证</router-link>
         <router-link to="/safe" tag="a" class="arrow"><i class="icon icon-with-26 icon-user-security"></i>安全设置</router-link>
@@ -19,11 +19,6 @@
     <div class="sign-out">退出</div>
 	</div>
 </template>
-
-
-
-
-
 <script>
 	export default {
     name:'User',

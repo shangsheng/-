@@ -8,6 +8,9 @@ import phoneNumber from '../views/safe/phoneNumber.vue';
 import bindingCard from '../views/safe/bankCard/index.vue';
 import bankCard from '../views/safe/bankCard/bankCard.vue';
 import certification from '../views/certification/index.vue';
+import account from '../views/account/index.vue';
+import recharge from '../views/account/recharge.vue';
+import membership from '../views/account/membership.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -48,6 +51,18 @@ const routes = [
       path: "/certification",
       name: "Certification",
       component: certification,
+    },{
+      path: "/account",
+      name: "Account",
+      component: account,
+    },{
+      path: "/recharge",
+      name: "Recharge",
+      component: recharge,
+    },{
+      path: "/membership",
+      name: "Membership",
+      component: membership,
     },]
   },
 ];

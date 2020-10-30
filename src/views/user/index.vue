@@ -27,6 +27,12 @@
         return{
           }
        },
+       beforeCreate(){
+         //判断是否登陆
+       },
+       created(){
+
+       },
        mounted(){
 	    	
 	    }

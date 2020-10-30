@@ -11,6 +11,10 @@ import certification from '../views/certification/index.vue';
 import account from '../views/account/index.vue';
 import recharge from '../views/account/recharge.vue';
 import membership from '../views/account/membership.vue';
+import pointsDetails from '../views/account/pointsDetails.vue';
+import userLogin from '../views/loginRegistration/index.vue';
+import userLogon from '../views/loginRegistration/logon.vue';
+import forgetPassword from '../views/loginRegistration/forgetPassword.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -63,6 +67,22 @@ const routes = [
       path: "/membership",
       name: "Membership",
       component: membership,
+    },{
+      path: "/pointsDetails",
+      name: "PointsDetails",
+      component: pointsDetails,
+    },{
+      path: "/userLogin",
+      name: "UserLogin",
+      component: userLogin,
+    },{
+      path: "/userLogon",
+      name: "UserLogon",
+      component: userLogon,
+    },{
+      path: "/forgetPassword",
+      name: "ForgetPassword",
+      component: forgetPassword,
     },]
   },
 ];

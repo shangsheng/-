@@ -1,26 +1,30 @@
 <template>
     <div>
     	 <!--dom渲染-->
-        <!-- <Car /> -->
+        <Car v-if="carList"/>
     	<!--地图-->
         <Map />
         <!--导航-->
-        <Navbar />
+        <Navbar @carBar="carDom" />
         <!--会员 [showUser ? 'open user' : 'user']-->
         <div  :class="{'open':show}" class="user" id="children-view">
         	<router-view />
         </div>
+		<signin v-if="signinBoolen" />
     </div>
 </template>
 <script>
 	import Map from '../amap/index';
 	import Car from '../car/index';
 	import Navbar from '@c/navBar/index';
+	import signin from './signIn';
 export default {
     name:'Index',
-    components:{Map,Car,Navbar},
+    components:{Map,Car,Navbar,signin},
     data(){
         return{
+			carList:false,
+			signinBoolen:true,//是否登陆
           }
        },
        mounted(){
@@ -48,11 +52,17 @@ export default {
 	    		const router = this.$route;
 	    		console.log(router)
 	    		return  router.name === 'Index' ? false : true;
-	    	}
+			},
+			
 	    },
 	    watch:{
 	    	
-	    }
+		},
+		methods:{
+			carDom(data){
+				this.carList = data;
+			}
+		}
   }
 </script>
 <style lang="scss" >
